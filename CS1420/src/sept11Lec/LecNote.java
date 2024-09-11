@@ -48,4 +48,31 @@ public class LecNote {
 	// we should write contract for every method
 
 	// scope
+
+	// arguments and return statements pass values, not variable
+
+	// two method, one is to create array, pass that array to another method
+
+	/**
+	 * using a loop to create an array containing all the non-negative whole number under
+	 * a certain count, and then print out all the elements in this array
+	 * @param count
+	 */
+	private static void creatArrayAndPrint(int count) {
+		int[] array = new int[count];
+		for (int i = 0; i < count; i++) {
+			array[i] = i;
+		}
+		printArray(array);
+	}
+
+	/**
+	 * to print out all the elements in an array
+	 * @param array
+	 */
+	private static void printArray(int[] array) {
+		for (int i = 0; i < array.length; i++) {
+			System.out.println(array[i]);
+		}
+	}
 }

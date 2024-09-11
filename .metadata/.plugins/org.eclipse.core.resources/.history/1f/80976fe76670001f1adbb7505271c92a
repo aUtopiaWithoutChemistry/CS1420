@@ -1,0 +1,15 @@
+package sept11Lec;
+
+public class LecNote {
+
+	public static void main(String[] args) {
+		double original = 2.79;
+		int percentage = 30;
+		double sale = salePrice(original, percentage);
+		System.out.printf("sale price is: %.2f" + sale);
+	}
+	
+	private static double salePrice(double original, int percentage) {
+		return (100 - percentage) * original / 100;
+	}
+}

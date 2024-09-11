@@ -1,0 +1,58 @@
+package sept04Lec;
+
+public class LecNote {
+	public static void main(String args[]) {
+//		int[] elevations = new int[] {1, 2, 3, 4};
+//		System.out.println(elevations[elevations.length - 1]);
+//		
+////		for(int i = 0; i < elevations.length; i++) {
+////			if (elevations[i] > 0) {
+////				System.out.println(elevations[i]);
+////			}
+////		}
+//		
+//		int index = -1;
+//		int min = Integer.MAX_VALUE;
+//		for(int i = 0; i < elevations.length; i++) {
+//			if (elevations[i] - 0 < min) {
+//				index = i;
+//				min = elevations[i] - 0;
+//			}	
+//		}
+//		System.out.println(index);
+//		
+//		String essay = "jao.fhofow .";
+//		String target = "..";
+//		
+//		boolean foundIt = false;
+//		for (int i = 0; i < essay.length() - target.length(); i++) {
+//			if (target.equals(essay.substring(i, i + target.length()))) {
+//				foundIt = true;
+//				break;
+//			}
+//		}
+//		
+//		if(foundIt) 
+//			System.out.println("contains target");
+//		else
+//			System.out.println("does not contains target");
+//		
+//		// handling exceptions -- runtime exception
+//		try {
+//			
+//		}
+//		catch(Exception e) {
+//			// only execute when error happens
+//		}
+//		
+//		
+		int[] ratings = { 1, 2, 10, 0, 5, 3, 3, 4 };
+		double[] dailyTemperatures = { 98.6, 100, 95.1, 32.23, 77.9, 70 };
+		for(int index = 0; index < dailyTemperatures.length; index++) {
+			System.out.println(index + 1 + " times");
+			if(dailyTemperatures[index] > 80)
+		      System.out.println(dailyTemperatures[index]);
+		}
+		   
+	}
+}

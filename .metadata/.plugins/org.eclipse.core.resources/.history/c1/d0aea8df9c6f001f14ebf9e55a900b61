@@ -1,0 +1,36 @@
+package assign03;
+
+import java.io.BufferedReader;
+2    import java.io.FileReader;
+3    import java.io.IOException;
+
+    public class HighestGradeFinder {
+        public static void main(String[] args) {
+            String fileName = "grades.txt"; // Replace with your file path
+            String topStudent = "";
+            int highestGrade = Integer.MIN_VALUE;
+    
+            try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    String[] parts = line.split(" ");
+                    String name = parts[0];
+                    int grade = Integer.parseInt(parts[1]);
+    
+                    if (grade > highestGrade) {
+                        highestGrade = grade;
+                        topStudent = name;
+                    }
+                }
+    
+                if (!topStudent.isEmpty()) {
+                    System.out.println("Top student: " + topStudent + " with grade: " + highestGrade);
+                } else {
+                    System.out.println("No data found in the file.");
+                }
+    
+            } catch (IOException e) {
+                System.out.println("Error reading the file: " + e.getMessage());
+            }
+        }
+    }

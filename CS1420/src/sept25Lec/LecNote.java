@@ -40,7 +40,5 @@ public class LecNote {
 
         // default methods of objects -- equals() & toString()
         // we need to override them with our own code
-
-
     }
 }

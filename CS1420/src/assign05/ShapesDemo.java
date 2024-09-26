@@ -24,7 +24,7 @@ public class ShapesDemo {
 		 * After creating the Circle class in part 2,
 		 * uncomment this method call to check Circle.
 		 */
-		 // demoPartTwo();
+		demoPartTwo();
 	}
 	
 	/**
@@ -34,52 +34,58 @@ public class ShapesDemo {
 		// Create some Rectangle objects
 		Rectangle r1 = new Rectangle();
 		Rectangle r2 = new Rectangle(5, 7, 10, 20);
-		// TODO create two more rectangles, r3 and r4:
 		// r3 is a 5 X 15 rectangle at (-10, 8)
+		Rectangle r3 = new Rectangle(-10, 8, 5, 15);
 		// r4 is a 2 X 2 rectangle at (1, 1)
+		Rectangle r4 = new Rectangle(1, 1, 2, 2);
 		
 		// NOTE: See the checkResult method at the end of this class.
 		
 		// getX
 		checkResult("getX", "5", "" + r2.getX());
-		// TODO add one more check of this method
+		checkResult("getX", "-10", "" + r3.getX());
 		
 		// getY
 		checkResult("getY", "7", "" + r2.getY());
-		// TODO add one more check of this method
+		checkResult("getY", "1", "" + r4.getY());
 		
 		// getWidth
 		checkResult("getWidth", "10", "" + r2.getWidth());
-		// TODO add one more check of this method
-		
+		checkResult("getWidth", "5", "" + r3.getWidth());
+
 		// getHeight
 		checkResult("getHeight", "20", "" + r2.getHeight());
-		// TODO add one more check of this method
+		checkResult("getHeight", "2", "" + r4.getHeight());
 		
 		// move
 		r1.move(4,  12);
 		checkResult("move x", "4", "" + r1.getX());
 		checkResult("move y", "12", "" + r1.getY());
-		// TODO add one more check of this method
+		r3.move(2, 4);
+		checkResult("move x", "2", "" + r3.getX());
+		checkResult("move y", "4", "" + r3.getY());
 		
 		// scale
 		r1.scale(11,  2);
 		checkResult("scale width", "11", "" + r1.getWidth());
 		checkResult("scale height", "2", "" + r1.getHeight());
-		// TODO add one more check of this method
+		r4.scale(5,  4);
+		checkResult("scale width", "10", "" + r4.getWidth());
+		checkResult("scale height", "8", "" + r4.getHeight());
 		
 		// largerThan
 		checkResult("largerThan", "false", "" + r1.largerThan(r2));
-		// TODO add one more check of this method
+		checkResult("largerThan", "true", "" + r4.largerThan(r3));
 		
 		// toString
 		checkResult("toString", "10 x 20 rectangle at (5, 7)", r2.toString());
-		// TODO add one more check of this method
+		checkResult("toString", "10 x 8 rectangle at (1, 1)", r4.toString());
 		
 		// bounding rectangle
 		Rectangle boundR1R2 = r1.boundingRectangle(r2);
 		checkResult("boundingRectangle", "11 x 20 rectangle at (4, 7)", "" + boundR1R2);
-		// TODO add one more check of this method
+		Rectangle boundR3R4 = r3.boundingRectangle(r4);
+		checkResult("boundingRectangle", "10 x 18 rectangle at (1, 1)", "" + boundR3R4);
 	}
 	
 	/**
@@ -89,50 +95,56 @@ public class ShapesDemo {
 		// Create some Circle objects
 		Circle c1 = new Circle();
 		Circle c2 = new Circle(4, 5, 6);
-		// TODO create two more circles, c3 and c4:
 		// c3 is an r = 10 circle at (0, 0)
+		Circle c3 = new Circle(0, 0, 10);
 		// c4 is an r = 2 circle at (88, 88)
-		
+		Circle c4 = new Circle(88, 88, 2);
+
 		// getX
 		checkResult("getX", "4", "" + c2.getX());
-		// TODO add one more check of this method
+		checkResult("getX", "0", "" + c3.getX());
 		
 		// getY
 		checkResult("getY", "5", "" + c2.getY());
-		// TODO add one more check of this method
+		checkResult("getY", "88", "" + c4.getY());
 		
 		// getRadius
 		checkResult("getRadius", "6", "" + c2.getRadius());
-		// TODO add one more check of this method
+		checkResult("getRadius", "10", "" + c3.getRadius());
 		
 		// move
 		c1.move(-2,  -3);
 		checkResult("move x", "-2", "" + c1.getX());
 		checkResult("move y", "-3", "" + c1.getY());
-		// TODO add one more check of this method
+		c4.move(15,  15);
+		checkResult("move x", "15", "" + c4.getX());
+		checkResult("move y", "15", "" + c4.getY());
 		
 		// scale
 		c1.scale(10);
 		checkResult("scale", "10", "" + c1.getRadius());
-		// TODO add one more check of this method
+		c3.scale(2);
+		checkResult("scale", "20", "" + c3.getRadius());
 		
 		// largerThan
 		checkResult("largerThan", "true", "" + c1.largerThan(c2));
-		// TODO add one more check of this method
-		
+		checkResult("largerThan", "false", "" + c4.largerThan(c3));
+
 		// toString
 		checkResult("toString", "r = 6 circle at (4, 5)", c2.toString());
-		// TODO add one more check of this method
+		checkResult("toString", "r = 20 circle at (0, 0)", c3.toString());
 		
 		// bounding rectangle 1
 		Rectangle boundC2 = c2.boundingRectangle();
 		checkResult("bounding rectangle 1", "12 x 12 rectangle at (-2, -1)", "" + boundC2);
-		// TODO add one more check of this method
+		Rectangle boundC4 = c4.boundingRectangle();
+		checkResult("bounding rectangle 1", "4 x 4 rectangle at (13, 13)", "" + boundC4);
 		
 		// bounding rectangle 2
 		Rectangle boundC1C2 = c1.boundingRectangle(c2);
 		checkResult("bounding rectangle 2", "22 x 24 rectangle at (-12, -13)", "" + boundC1C2);
-		// TODO add one more check of this method
+		Rectangle boundC3C4 = c3.boundingRectangle(c4);
+		checkResult("bounding rectangle 2", "40 x 40 rectangle at (-20, -20)", "" + boundC3C4);
 	}
 	
 	/**
